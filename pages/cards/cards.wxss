@@ -1,0 +1,12 @@
+.toolbar { display:flex; justify-content:space-between; align-items:center; margin: 12rpx 0 26rpx; }
+.add { margin:0; }
+.card-row { margin-bottom:18rpx; padding:24rpx; }
+.card-word { font-size:34rpx; font-weight:800; }
+.example { font-size:25rpx; line-height:1.5; margin:10rpx 0; }
+.meaning { font-size:26rpx; color:#46516a; }
+.row-actions { display:flex; justify-content:space-between; margin-top:18rpx; font-size:22rpx; }
+.delete { color:#c45a4b; padding:4rpx 10rpx; }
+.empty { text-align:center; padding:70rpx 20rpx; }
+.import-export { margin-top:28rpx; }
+.import-export button { margin:14rpx 0; }
+.import-area { background:#f6f7fb; width:100%; min-height:180rpx; padding:16rpx; box-sizing:border-box; margin:16rpx 0; }
