@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="toolbar"><view><view class="title">我的词库</view><view class="muted">{{cards.length}} 个单词 / 短语</view></view><button class="primary add" bindtap="add">＋ 添加</button></view>
+  <view wx:for="{{cards}}" wx:key="id" class="card-row panel">
+    <view class="card-main" data-id="{{item.id}}" bindtap="edit"><view class="card-word">{{item.word}}</view><view class="muted example">{{item.example}}</view><view class="meaning">{{item.meaning}}</view></view>
+    <view class="row-actions"><text class="muted">{{item.reviewCount || 0}} 次复习</text><text class="delete" data-id="{{item.id}}" catchtap="remove">删除</text></view>
+  </view>
+  <view wx:if="{{!cards.length}}" class="panel empty muted">词库还是空的，添加第一个单词吧。</view>
+  <view class="import-export panel">
+    <view class="section-title">备份与迁移</view>
+    <button class="secondary" bindtap="exportData">导出 JSON 备份</button>
+    <button class="secondary" bindtap="showImport">导入 JSON 备份</button>
+    <textarea wx:if="{{importing}}" class="import-area" value="{{importText}}" bindinput="onImportInput" placeholder="粘贴此前导出的 JSON 数据"></textarea>
+    <button wx:if="{{importing}}" class="primary" bindtap="importData">确认导入（将合并到当前词库）</button>
+  </view>
+</view>
