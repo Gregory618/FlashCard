@@ -1,0 +1,24 @@
+<view class="container" wx:if="{{card}}">
+  <view class="progress-row"><text class="muted">今日复习</text><text class="muted">{{position}} / {{queueLength}}</text></view>
+  <view class="progress"><view class="progress-inner" style="width: {{progress}}%"></view></view>
+  <view class="flashcard panel" bindtap="flip">
+    <view class="side-label">{{flipped ? '中文释义' : 'ENGLISH'}}</view>
+    <view wx:if="{{!flipped}}" class="word">{{card.word}}</view>
+    <view wx:if="{{!flipped}}" class="example">{{card.example}}</view>
+    <view wx:else class="answer">
+      <view class="meaning">{{card.meaning}}</view>
+      <view wx:if="{{card.synonyms.length}}" class="detail"><text class="detail-title">同义 / 近义表达</text>{{card.synonyms.join(' · ')}}</view>
+      <view wx:if="{{card.notes}}" class="detail"><text class="detail-title">用法与记忆提示</text>{{card.notes}}</view>
+    </view>
+    <view class="tap-hint muted">{{flipped ? '点击卡片可返回正面' : '点击卡片，查看中文释义'}}</view>
+  </view>
+  <view wx:if="{{flipped}}" class="grading">
+    <view class="muted grade-hint">你刚才是否记住了这个词？</view>
+    <view class="grade-buttons">
+      <button class="again" bindtap="grade" data-remembered="false">没记住</button>
+      <button class="remembered" bindtap="grade" data-remembered="true">记住了</button>
+    </view>
+  </view>
+  <button wx:else class="secondary reveal" bindtap="flip">查看答案</button>
+</view>
+<view wx:else class="container"><view class="panel done"><view class="done-title">复习完成！</view><view class="muted">今天到期的单词已经复习完毕。</view><button class="primary" bindtap="backHome">返回首页</button></view></view>
