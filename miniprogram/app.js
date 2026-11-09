@@ -1,0 +1,1 @@
+App({onLaunch(){const cards=wx.getStorageSync("efc_cards");if(!cards||!cards.length){const seed=require("./utils/seed.js");wx.setStorageSync("efc_cards",seed.cards);}if(!wx.getStorageSync("efc_review_log"))wx.setStorageSync("efc_review_log",[]);}});
