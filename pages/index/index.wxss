@@ -1,0 +1,11 @@
+.hero { padding: 34rpx 8rpx 42rpx; }
+.eyebrow { color: #5369ec; font-size: 22rpx; letter-spacing: 4rpx; font-weight: 700; }
+.hero-title { font-size: 48rpx; font-weight: 800; margin: 18rpx 0; }
+.stats { display: flex; gap: 14rpx; }
+.stat { flex: 1; padding: 22rpx 12rpx; text-align: center; }
+.stat-num { font-size: 42rpx; font-weight: 800; color: #405cf5; margin-bottom: 8rpx; }
+.today { margin-top: 24rpx; }
+.start { margin-top: 30rpx; }
+.quick-actions { display: flex; gap: 18rpx; margin-top: 24rpx; }
+.quick-actions button { flex: 1; }
+.footnote { font-size: 22rpx; line-height: 1.6; margin: 32rpx 8rpx; }
