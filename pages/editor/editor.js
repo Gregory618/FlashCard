@@ -21,7 +21,7 @@ Page({
       notes: (notes || "").trim(),
       createdAt: old ? old.createdAt : Date.now(),
       stage: old ? old.stage : 0,
-      nextReviewAt: old ? old.nextReviewAt : Date.now(),
+      nextReviewAt: old ? old.nextReviewAt : Date.now() + 24 * 60 * 60 * 1000,
       reviewCount: old ? old.reviewCount : 0
     });
     wx.showToast({ title: "保存成功", icon: "success" });
