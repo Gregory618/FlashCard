@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="hero">
+    <view class="eyebrow">ENGLISH FLASHCARD</view>
+    <view class="hero-title">让单词留在记忆里。</view>
+    <view class="muted">通过真实例句和间隔重复，逐步建立长期记忆。</view>
+  </view>
+  <view class="stats">
+    <view class="stat panel"><view class="stat-num">{{dueCount}}</view><view class="muted">今日待复习</view></view>
+    <view class="stat panel"><view class="stat-num">{{totalCount}}</view><view class="muted">词库总量</view></view>
+    <view class="stat panel"><view class="stat-num">{{learnedCount}}</view><view class="muted">已有复习记录</view></view>
+  </view>
+  <view class="panel today">
+    <view class="section-title">今日复习</view>
+    <view class="muted">按照第 1、2、4、7、15、30、60 天的节奏安排复习；答错的单词会重新进入短间隔复习。</view>
+    <button class="primary start" bindtap="startReview" disabled="{{dueCount === 0}}">{{dueCount ? '开始复习 ' + dueCount + ' 个单词' : '今天暂时没有到期单词'}}</button>
+  </view>
+  <view class="quick-actions">
+    <button class="secondary" bindtap="openCards">管理词库</button>
+    <button class="secondary" bindtap="addCard">添加单词</button>
+  </view>
+  <view class="footnote muted">提示：每天打开小程序时，首页会自动计算到期词汇。小程序无法在未打开时保证自动识别你的第一条聊天或无限制推送提醒。</view>
+</view>
