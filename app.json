@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/review/review",
+    "pages/cards/cards",
+    "pages/editor/editor"
+  ],
+  "window": {
+    "navigationBarTitleText": "English FlashCard",
+    "navigationBarBackgroundColor": "#f7f8fc",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f7f8fc"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
