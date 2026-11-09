@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="panel form">
+    <view class="section-title">正面 · 只显示英文</view>
+    <view class="field-label">单词 / 短语</view><input class="field" value="{{word}}" bindinput="input" data-field="word" placeholder="例如 mutual"/>
+    <view class="field-label">英文例句</view><textarea class="field area" value="{{example}}" bindinput="input" data-field="example" placeholder="包含这个单词的完整英文句子"/>
+    <view class="section-title">背面 · 中文解释</view>
+    <view class="field-label">中文释义</view><textarea class="field area" value="{{meaning}}" bindinput="input" data-field="meaning" placeholder="中文释义"/>
+    <view class="field-label">同义词 / 近义表达（用英文逗号分隔）</view><input class="field" value="{{synonymsText}}" bindinput="input" data-field="synonymsText" placeholder="例如 reciprocal, shared"/>
+    <view class="field-label">用法、辨析、词源和记忆提示</view><textarea class="field area notes" value="{{notes}}" bindinput="input" data-field="notes" placeholder="可选：搭配、词源、易混词辨析等"/>
+    <button class="primary save" bindtap="save">保存闪卡</button>
+  </view>
+</view>
