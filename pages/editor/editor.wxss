@@ -1,0 +1,6 @@
+.form { padding:30rpx; }
+.field-label { font-size:25rpx; color:#69748c; margin:24rpx 0 10rpx; }
+.field { background:#f6f7fb; border-radius:12rpx; padding:18rpx; font-size:28rpx; box-sizing:border-box; width:100%; }
+.area { min-height:130rpx; }
+.notes { min-height:180rpx; }
+.save { margin-top:34rpx; }
