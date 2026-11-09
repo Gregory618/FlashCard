@@ -1,0 +1,9 @@
+const now = Date.now();
+module.exports = [
+  { id: "seed-mutual", word: "mutual", example: "Both countries benefit from mutual cooperation.", meaning: "相互的；共同的；彼此的。", synonyms: ["reciprocal", "shared"], notes: "mutual friend = 共同的朋友；mutual benefit = 互利。强调双方或多方之间的共同关系。", createdAt: now, stage: 0, nextReviewAt: now, reviewCount: 0 },
+  { id: "seed-rapt", word: "rapt", example: "The children listened with rapt attention.", meaning: "全神贯注的；入迷的。", synonyms: ["absorbed", "engrossed"], notes: "常见搭配：rapt attention；listen with rapt attention。词源与拉丁语 rapere（抓住）有关：注意力被牢牢抓住。", createdAt: now, stage: 0, nextReviewAt: now, reviewCount: 0 },
+  { id: "seed-haze", word: "haze", example: "Haze affects air quality in Singapore.", meaning: "烟霾；薄雾；朦胧。", synonyms: ["mist", "smog"], notes: "haze 可指空气中烟尘形成的朦胧状态；smog 更强调烟雾污染。", createdAt: now, stage: 0, nextReviewAt: now, reviewCount: 0 },
+  { id: "seed-exempt", word: "exempt from", example: "They are exempt from tax.", meaning: "免于；获豁免。", synonyms: ["free from", "免除"], notes: "常用结构：be exempt from something。", createdAt: now, stage: 0, nextReviewAt: now, reviewCount: 0 },
+  { id: "seed-standing", word: "standing", example: "She is a member of a standing committee.", meaning: "常设的；长期存在的。", synonyms: ["permanent", "continuing"], notes: "注意区分 standing committee（常设委员会）与 stand（站立）。", createdAt: now, stage: 0, nextReviewAt: now, reviewCount: 0 },
+  { id: "seed-acquaintance", word: "acquaintance", example: "He is an acquaintance, not a close friend.", meaning: "熟人；相识的人；认识。", synonyms: ["contact", "person one knows"], notes: "an acquaintance 通常指认识但不亲密的人。", createdAt: now, stage: 0, nextReviewAt: now, reviewCount: 0 }
+];
