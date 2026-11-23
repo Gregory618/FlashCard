@@ -35,6 +35,9 @@ function renderCard(){
   $('example').textContent=c.example;
   $('meaning').textContent=c.meaning;
   $('memory').textContent=c.memory || '';
+  const cardImage=$('memoryImage');
+  cardImage.src=c.image || '';
+  cardImage.classList.toggle('hidden', !c.image);
   $('memoryWrap').classList.toggle('hidden', !c.memory);
   $('front').classList.toggle('hidden', showingBack);
   $('back').classList.toggle('hidden', !showingBack);
@@ -55,7 +58,7 @@ function escapeHtml(s){ return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<'
 function renderLibrary(){
   const q=$('searchInput').value.trim().toLowerCase();
   const list=cards.filter(c=>(c.word+' '+c.example+' '+c.meaning+' '+c.memory).toLowerCase().includes(q));
-  $('libraryList').innerHTML=list.map(c=>'<article class="library-item"><div class="library-word">'+escapeHtml(c.word)+'</div><div class="library-example">'+escapeHtml(c.example)+'</div><div class="library-meaning">'+escapeHtml(c.meaning)+'</div>'+(c.memory?'<div class="memory-wrap"><div class="label">Memory</div><div class="memory">'+escapeHtml(c.memory)+'</div></div>':'')+'</article>').join('')||'<div class="empty">没有找到匹配的卡片。</div>';
+  $('libraryList').innerHTML=list.map(c=>'<article class="library-item"><div class="library-word">'+escapeHtml(c.word)+'</div><div class="library-example">'+escapeHtml(c.example)+'</div><div class="library-meaning">'+escapeHtml(c.meaning)+'</div>'+(c.memory?'<div class="memory-wrap"><div class="label">Memory</div><div class="memory">'+escapeHtml(c.memory)+'</div>'+(c.image?'<img class="memory-image" src="'+escapeHtml(c.image)+'" alt="Memory illustration">':'')+'</div>':'')+'</article>').join('')||'<div class="empty">没有找到匹配的卡片。</div>';
 }
 function exportBackup(){
   const payload={app:'English FlashCard',version:1,exportedAt:new Date().toISOString(),cards:cards,progress:progress};
