@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<meta name="description" content="English FlashCard — contextual English vocabulary and spaced repetition.">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="./styles.css">
+<title>English FlashCard</title>
+</head>
+<body>
+<header class="app-header"><div><h1>English FlashCard</h1><p class="subtitle">把新闻里的英语，变成自己的英语。</p></div><button id="installBtn" class="ghost hidden" type="button">安装 App</button></header>
+<main class="container">
+<section class="dashboard">
+<div class="stat"><span id="dueCount">0</span><small>今日到期</small></div>
+<div class="stat"><span id="knownCount">0</span><small>已掌握</small></div>
+<div class="stat"><span id="totalCount">0</span><small>词卡总数</small></div>
+<button id="reviewBtn" class="primary" type="button">开始复习</button>
+<button id="libraryBtn" class="secondary" type="button">词库</button>
+</section>
+<section id="reviewView" class="view">
+<div class="view-head"><div><h2>今日复习</h2><p id="reviewMeta" class="muted">准备好了。</p></div><button id="resetSessionBtn" class="ghost" type="button">重新开始</button></div>
+<div id="emptyState" class="empty hidden"><h3>今天没有到期卡片 🎉</h3><p>可以去词库查看全部单词，或者继续等待下一轮复习。</p></div>
+<article id="card" class="flashcard hidden" tabindex="0" aria-label="英语闪卡">
+<div class="card-top"><span id="progressLabel">1 / 1</span><span id="dueLabel"></span></div>
+<div id="front" class="card-face"><div id="word" class="word"></div><div id="example" class="example"></div></div>
+<div id="back" class="card-face hidden"><div class="label">Meaning</div><div id="meaning" class="meaning"></div><div id="memoryWrap" class="memory-wrap hidden"><div class="label">Memory</div><div id="memory" class="memory"></div></div></div>
+<button id="flipBtn" class="flip-btn" type="button">点击翻卡</button>
+</article>
+<div id="gradeBar" class="grade-bar hidden"><button id="missedBtn" class="grade missed" type="button">× 忘记了</button><button id="knownBtn" class="grade known" type="button">✓ 记住了</button></div>
+<p class="keyboard-help">快捷键：Space 翻卡 · 1 忘记 · 2 记住</p>
+</section>
+<section id="libraryView" class="view hidden">
+<div class="view-head"><div><h2>英语词库</h2><p class="muted">搜索单词、例句或中文解释。</p></div><button id="backToReviewBtn" class="ghost" type="button">返回复习</button></div>
+<input id="searchInput" class="search" type="search" placeholder="搜索，例如 scandal / 丑闻">
+<div id="libraryList" class="library-list"></div>
+</section>
+<section class="tools"><div><h2>数据备份</h2><p class="muted">卡片数据来自仓库；复习进度保存在本机。可导出备份，换设备后再导入。</p></div><div class="tool-actions"><button id="exportBtn" class="secondary" type="button">导出进度</button><label class="secondary file-btn">导入进度<input id="importInput" type="file" accept="application/json"></label></div></section>
+</main>
+<footer><span>V1 · Local-first · Offline friendly</span></footer>
+<script src="./app.js"></script>
+</body>
+</html>
